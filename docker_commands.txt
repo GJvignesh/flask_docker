@@ -1,0 +1,65 @@
+Pull image from hub:
+	docker pull codercom/code-server
+Run image in deamon mode -d, port -p <actual>:<inside_docker>
+	docker run -d -p 90:80 docker/getting-started
+To see all docker image:
+	docker ps -a
+To stop the docker with container_hash:
+	docker stop <name>
+To remove the stopped docker app:
+	docker rm <name>
+
+basic image:
+	docker/getting-started
+
+
+========================================================================================================================================
+Regarding code server:
+	docker run -it -p 8080:8080 -v "$PWD:/home/coder/project" -u "$(id -u):$(id -g)" codercom/code-server:latest
+
+	sudo docker run -it -p 8080:8080 -v "$PWD:/home/coder/project" -u "$(id -u):$(id -g)" codercom/code-server:latest
+
+	sudo docker run -it -p 8080:8080 codercom/code-server:latest --auth none
+	6c1ec69ed03c9494d162a53e
+
+	password will be in : sudo ls -lthr /var/lib/docker/containers/<container>
+	/bin/bash/
+========================================================================================================================================
+To open the bash line of container
+	docker exec -it <container name> /bin/bash
+	docker exec -it 664c4a677afa9800a217899403e171b54b40f846c89875714221a9cb31b92bfc /bin/bash
+
+
+========================================================================================================================================
+
+sudo docker run -d -p 8080:8080 codercom/code-server:latest
+sudo docker run -d -p 9000:9000 codercom/code-server:latest
+
+https://stackoverflow.com/questions/32353055/how-to-start-a-stopped-docker-container-with-a-different-command
+
+sudo docker run -it -d -p 8085:8080 codercom/code-server:latest
+
+sudo docker commit 664c4a677afa vignesh/python-img
+
+sudo docker run -it -d -p 8085:8080 vignesh/python-img
+
+========================================================================================================================================
+
+To build the docker image:
+	 docker build -t wine_api .
+	 docker build -t <app_name> .
+
+To start the docker app:
+	docker run -p 8000:8000 wine_api
+
+To see built image:
+	 docker images -a
+
+To make a backup of built image:
+	docker save -o <path for generated tar file> <image name>
+	docker save -o C:\Users\vgopalja.PARTNERS\docker_test wine_api
+
+To remove the docker image:
+	docker rmi <image_name>
+
+========================================================================================================================================

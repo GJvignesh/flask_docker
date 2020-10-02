@@ -13,7 +13,7 @@ config.read('ConfigFile.properties')
 app = Flask(__name__)
 Swagger(app)
 app.config["DEBUG"] = True  # Setting the debug on so, no need to reload for code change
-logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO,  # Logging configuration
+logging.basicConfig(level=logging.INFO,  # Logging configuration
                     format='%(asctime)s::%(levelname)s::%(funcName)s::%(message)s')
 
 
@@ -135,4 +135,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0',port=8000)

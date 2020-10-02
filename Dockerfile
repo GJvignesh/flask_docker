@@ -4,4 +4,3 @@ EXPOSE 5000
 WORKDIR /usr/app/
 RUN pip install -r requirements.txt
 CMD python app_flask.py
-CMD python app_flasgger.py
