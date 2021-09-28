@@ -1,2 +1,5 @@
 # flask_docker
-simple flask application, to put into host system via docker image
+## Free time - Custom Project
+
+Simple flask application, to put into host system via docker image
+Done using Wine Quality multi-class-classification (Classic ML model)
